@@ -1,0 +1,63 @@
+/* JONATHAN HERRERA */
+
+nav#secondNav {
+	width: 100%;
+	/* i want my side nav to take up only a bit of the page */
+	margin-top: -35px;
+	/* this overrides the margin defined by #myNav so that the two are snug */
+	height: 30px;
+	position: absolute;
+	/* these two properties prevent the content below from being pushed to the side */
+}
+
+	#secondNav ul {
+		width: auto;
+		/* the links will stay contained within the #secondNav */
+		text-align: left;
+		list-style-type: none;
+		/* remove bullets */
+		background-color: rgba(210,210,210,.1);
+		
+	}
+	
+		#secondNav li {
+			display: inline-block;
+			/* makes the links appear side-by-side */
+			border: 2px solid red;
+		}
+		
+			#secondNav li:first-child {
+				margin-left: 50px;
+				/* indenting the list */
+			}
+	
+		#secondNav li a {
+			display: block;
+			/* this makes the whole list area clickable */
+			text-decoration: none;
+			font-size: 18px;
+			color: #717171;
+			margin-right: 10px;
+			/* spacing things out */
+			transition: .3s;
+		}
+		
+			#secondNav a:hover {
+				text-decoration: underline;
+			}
+			
+			#secondNav a:active {
+				color: #F6F6F6;
+			}
+			
+#portfolioDisplay {
+	text-align: center;
+	float: right;
+	width: 75%;
+	max-height: 90vh;
+	/* I want my portfolio content to take up a portion of the screen's width and have a height long enough so it doesn't need to scroll */
+	border: 1px solid green;
+	margin-left: 25px;
+}
+		
+			
