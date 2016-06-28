@@ -6,10 +6,11 @@
     <head> 
     
         <meta charset="UTF-8">
+		<meta name="viewport" content="width=content-width"
         
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/homeStyle.css">
-		<link rel="stylesheet" type="text/css" href="css/portfolioStyle.css">
+		<link rel="stylesheet" type="text/css" href="css/portfolioStyle2.css">
 		
 		<script src="js/script.js" defer></script>
 		<!-- the defer is needed so that the page will load the carousel before the JS -->
@@ -37,7 +38,7 @@
 				
 				<li> <a class="mainLink" onclick="currentSite(1)"> HOME </a> </li>
 				<li> <a class="mainLink" onclick="currentSite(2)"> ABOUT ME </a> </li>
-				<li> <a class="mainLink" onclick="currentSite(3)"> PORTFOLIO </a> </li>
+				<li> <a class="mainLink" onclick="currentSite(3)" onclick="load0()"> PORTFOLIO </a> </li>
 				<li> <a class="mainLink" onclick="currentSite(4)"> INTERESTS </a> </li>
 				<li> <a class="mainLink" onclick="currentSite(5)"> CONTACT </a> </li>
 				<!-- the links are more like the slideshow than actual links as they will simply rotate the pages as opposed to loading a separate sheet each time -->
@@ -142,15 +143,17 @@ this was for a secondary navbar but the idea is scrapped for now
 
 <!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE -->
 
-		<section id="portfolioPage" class="sitePage fadePage">
+<!--		<section id="portfolioPage" class="sitePage fadePage">
 		
+	idea where links are on the top but and page would load underneath. On pause while a more visually appealing design is attempted		
 			<nav id="secondNav">
 			
 				<ul>
-				
-					<li><a href="#" onclick="load1()"> Project 1 </a></li>
-					<li><a href="#" onclick="load2()"> Project 2 </a></li>
-					<li><a href="#"> Project 3 </a></li>
+					
+					<li><a onclick="load0()"> Snapshots </a><li>
+					<li><a onclick="load1()"> Project 1 </a></li>
+					<li><a onclick="load2()"> Project 2 </a></li>
+					<li><a onclick="load3()"> Project 3 </a></li>
 					
 				</ul>
 			
@@ -158,24 +161,122 @@ this was for a secondary navbar but the idea is scrapped for now
 			
 			<article id="portfolioDisplay"> 
 			
-			<script>
-			
-				function load1(){
-					document.getElementById("portfolioDisplay").innerHTML='<object type="text/html" data="minigames/brickbreaker.html"  text-align="center" width="100%" height="75%" class="fade"></object>';
-				}
+				<script>
+					
+					var portDisplay = document.getElementById("portfolioDisplay");
+					var snapshot = document.getElementById("snapshots");
+					
+					function load0(){
+						portDisplay.style.display = "none";
+						snapshot.style.display = "flex";	
+						<!-- this function will hide my projects and bring up its own section -->
+<!--					}				
 				
-				function load2(){
-					document.getElementById("portfolioDisplay").innerHTML='<object type="text/html" data="minigames/pong.html"  text-align="center" width="100%" height="100%" class="fade"></object>';
-					window.scrollTo(300, 500);
-				}
-				
-			</script>
+					function load1(){
+						portDisplay.style.display = "initial";
+						portDisplay.innerHTML='<object type="text/html" data="minigames/brickbreaker.html"  text-align="center" width="70%" height="75%" class="fade"></object>';
+						snapshot.style.display = "none";
+						<!-- this function will display one of my projects in the portfolio section -->
+<!--					}
+					
+					function load2(){
+						portDisplay.style.display = "initial";
+						portDisplay.innerHTML='<object type="text/html" data="minigames/pong.html"  text-align="center" width="70%" height="100%" class="fade"></object>';
+						window.scrollTo(300, 500);
+						snapshot.style.display = "none";
+					}
+					//these functions are used to retrieve the portofolio objects
+					
+				</script>
 			
 			</article>
-						
 			
+			<article id="snapshots">
+			
+				
+			
+			</article>
+	
+		</section>  -->
 		
-		</section> 
+		<section id="portfolioPage" class="sitePage fadePage">
+		<!-- all images should be 300w by 200h in png format -->
+		
+			<section id="polaroids" class="flex-container2">
+			
+				<figure class="flex-item2">
+					<img src="images/svg.png">
+						<figcaption>
+							
+							A masterpiece by Jonathan Herrera <br>
+							05.29.16
+							
+						</figcaption>
+				</figure>
+				
+				<figure class="flex-item2">
+					<img src="images/guess.png">
+						<figcaption>
+					
+							A simple guessing game <br>
+							06.09.16
+						
+						</figcaption>
+				</figure>
+				
+				<figure class="flex-item2">
+					<img src="images/breakout.png">
+					
+						<figcaption>
+						
+							A recreation of the game Breakout <br>
+							06.13.16
+							
+						</figcaption>
+				</figure>
+				
+				<figure class="flex-item2">
+					<img src="images/pong.png">
+						<figcaption>
+					
+						A two player Pong <br>
+						06.15.16
+						
+						</figcaption>
+				</figure>
+				
+			</section>
+			
+			<section id="projectDisplay">
+			
+				<p>
+				
+					This page contains small projects that I have worked on. Each project is a way of demonstrating the skills that I have learned at that point in time. As simple as they may appear, I have spent many hours working with each of them individually. They are not the most pollished pieces as more projects roll in but the experience gained from creating them will hopefully by noticeable in my upcoming pieces.
+				
+				</p>
+				
+				<p id="sig">
+				
+					-- Jonathan Herrera
+				
+				</p>
+			
+			</section>	
+			
+			<script>
+					
+					var portDisplay = document.getElementById("polaroids");
+					var snapshot = document.getElementById("snapshots");
+					
+					function load0(){
+						portDisplay.style.display = "none";
+						snapshot.style.display = "flex";	
+						<!-- this function will hide my projects and bring up its own section -->
+					}
+
+			</script>
+
+		</section>
 		
     </body>
 

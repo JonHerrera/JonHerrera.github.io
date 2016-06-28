@@ -1,0 +1,80 @@
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+	/* allowing the images to stack nicely */
+    }
+
+	.flex-item2 {
+		order: 0;
+		flex: 1 1 auto;
+		align-self: auto;
+		}
+		
+#polaroids {
+/* this is where the projects are displayed */
+	margin-left: 10px;
+	padding: 10px 10px 10px 10px;
+	/* spacing it out */	
+	background-color: rgba(190,190,190,.2);
+	border-radius: 15px;
+	/* styling it */
+	width: 650px;
+	height: 550px;
+	overflow: hidden;
+}
+
+	figure {
+		padding: 5px;
+		background-color: white;
+		box-shadow: -.5px .5px 5px #717171;
+		/* I am giving each project the design of a polaroid */
+		max-height: 250px;
+		margin-bottom: 5px;
+		/* spacing them out nicely */
+	}
+	
+		figure img {
+			border: .5px solid grey;
+			background-color: black;
+			opacity: .2;
+			/* making the image not so clear until hovered on */
+			transition: .6s;
+		}
+		
+			figure img:hover {
+				opacity: 1;
+				cursor: pointer;
+			}
+
+		figcaption {
+			font-family: Century Gothic, sans-serif;
+			color: #333333;
+			text-align: center;
+			/* make it look like writing on a polaroid */
+			font-weight: bold;
+			font-style: italic;
+		}
+		
+#projectDisplay {
+	margin: 0 10px 0 10px;
+	background-color: rgba(190,190,190,.2);
+	padding: 10px 10px 10px 10px;
+	border-radius: 15px;
+	width: 500px;
+	height: 550px;
+	overflow: hidden;
+}
+
+	#projectDisplay p {
+		border: 1px solid red;
+		font-size: 18px;
+		padding: 20px 10px 20px 10px;
+	}
+	
+		#projectDisplay p#sig {
+			text-align: right;
+		}
