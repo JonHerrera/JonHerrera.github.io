@@ -6,7 +6,7 @@
     <head> 
     
         <meta charset="UTF-8">
-		<meta name="viewport" content="width=content-width"
+<!--		<meta name="viewport" content="width=content-width"> -->
         
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/homeStyle.css">
@@ -205,44 +205,55 @@ this was for a secondary navbar but the idea is scrapped for now
 			<section id="polaroids" class="flex-container2">
 			
 				<figure class="flex-item2">
+				
 					<img src="images/svg.png">
-						<figcaption>
-							
-							A masterpiece by Jonathan Herrera <br>
-							05.29.16
-							
-						</figcaption>
-				</figure>
 				
-				<figure class="flex-item2">
-					<img src="images/guess.png">
-						<figcaption>
-					
-							A simple guessing game <br>
-							06.09.16
+					<figcaption>
 						
-						</figcaption>
+						A masterpiece by Jonathan Herrera <br>
+						05.29.16
+						
+					</figcaption>
+				
 				</figure>
 				
 				<figure class="flex-item2">
+				
+					<img src="images/guess.png">
+					
+					<figcaption>
+					
+						A simple guessing game <br>
+						06.09.16
+						
+					</figcaption>
+					
+				</figure>
+				
+				<figure class="flex-item2">
+				
 					<img src="images/breakout.png">
 					
-						<figcaption>
+					<figcaption>
+					
+						A recreation of the game Breakout <br>
+						06.13.16
 						
-							A recreation of the game Breakout <br>
-							06.13.16
-							
-						</figcaption>
+					</figcaption>
+					
 				</figure>
 				
 				<figure class="flex-item2">
+				
 					<img src="images/pong.png">
-						<figcaption>
+					
+					<figcaption>
 					
 						A two player Pong <br>
 						06.15.16
 						
-						</figcaption>
+					</figcaption>
+					
 				</figure>
 				
 			</section>
@@ -263,7 +274,18 @@ this was for a secondary navbar but the idea is scrapped for now
 			
 			</section>	
 			
+			<script>
+					
+					var portDisplay = document.getElementById("polaroids");
+					var snapshot = document.getElementById("snapshots");
+					
+					function load0(){
+						portDisplay.style.display = "none";
+						snapshot.style.display = "flex";	
+						<!-- this function will hide my projects and bring up its own section -->
+					}
 
+				</script>
 
 		</section>
 		
