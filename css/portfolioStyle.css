@@ -1,63 +1,109 @@
-/* JONATHAN HERRERA */
+/* these flex boxes are the whole sections of the portfolie page */
+.flex-containerPort {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    }
 
-nav#secondNav {
-	width: 100%;
-	/* i want my side nav to take up only a bit of the page */
-	margin-top: -35px;
-	/* this overrides the margin defined by #myNav so that the two are snug */
-	height: 30px;
-	position: absolute;
-	/* these two properties prevent the content below from being pushed to the side */
+	.flex-itemPort:nth-child(1) {
+		order: 0;
+		flex: 0 1 75%;
+		align-self: center;
+		}
+
+	.flex-itemPort:nth-child(2) {
+		order: 2;
+		flex: 0 1 75%;
+		align-self: center;
+		}
+
+		/* these flex boxes are the polaroid style links */
+.flex-container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    }
+
+	.flex-item2 {
+		order: 0;
+		flex: 0 1 25%;
+		align-self: stretch;
+		}
+
+#portfolioPage p {
+	color: black;
+	text-align: center;
+	margin-top: -20px;
+	/* making the paragraph closer to the nav bar to eliminate excess white space */
+}
+		
+#polaroids {
+/* this is where the projects are displayed */
+	margin: 10px 0 0 10px;
+	padding: 10px 10px 10px 10px;
+	/* spacing it out */	
+	background-color: rgba(190,190,190,.2);
+	border-radius: 15px;
+	/* styling it */
+	max-width: 100%;
+	height: auto;
+	overflow: hidden;
 }
 
-	#secondNav ul {
-		width: auto;
-		/* the links will stay contained within the #secondNav */
-		text-align: left;
-		list-style-type: none;
-		/* remove bullets */
-		background-color: rgba(210,210,210,.1);
-		
+	figure {
+		padding: 5px;
+		background-color: white;
+		box-shadow: -.5px .5px 5px #717171;
+		/* I am giving each project the design of a polaroid */
+		max-height: 250px;
+		margin-bottom: 5px;
+		/* spacing them out nicely */
 	}
 	
-		#secondNav li {
-			display: inline-block;
-			/* makes the links appear side-by-side */
-			border: 2px solid red;
+		figure img {
+			border: .5px solid grey;
+			background-color: black;
+			opacity: .2;
+			/* making the image not so clear until hovered on */
+			transition: .6s;
+			cursor: pointer;
+			/* so the user can identify the link */
 		}
 		
-			#secondNav li:first-child {
-				margin-left: 50px;
-				/* indenting the list */
+			figure img:hover {
+				opacity: 1;
 			}
-	
-		#secondNav li a {
-			display: block;
-			/* this makes the whole list area clickable */
-			text-decoration: none;
-			font-size: 18px;
-			color: #717171;
-			margin-right: 10px;
-			/* spacing things out */
-			transition: .3s;
+
+		figcaption {
+			font-family: Century Gothic, sans-serif;
+			color: #333333;
+			text-align: center;
+			/* make it look like writing on a polaroid */
+			font-weight: bold;
+			font-style: italic;
 		}
 		
-			#secondNav a:hover {
-				text-decoration: underline;
-			}
-			
-			#secondNav a:active {
-				color: #F6F6F6;
-			}
-			
-#portfolioDisplay {
-	text-align: center;
-	float: right;
-	width: 75%;
-	max-height: 90vh;
-	/* I want my portfolio content to take up a portion of the screen's width and have a height long enough so it doesn't need to scroll */
-	border: 1px solid green;
-	margin-left: 25px;
+#projectDisplay {
+	margin: 0 10px 0 10px;
+	background-color: rgba(190,190,190,.2);
+	padding: 10px 10px 10px 10px;
+	border-radius: 15px;
+	width: 500px;
+	height: 550px;
+	overflow: hidden;
 }
-		
-			
+
+@media screen and (max-width: 600px) {
+	
+	#portfolioPage p {
+		margin-top: 5px;
+		/* overriding the previous margin to account for the nav bar in mobile view */
+	}
+	
+}

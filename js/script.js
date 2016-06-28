@@ -115,3 +115,22 @@
 			document.getElementById("myNav").style.height = "0%";
 		}
 	}
+	
+/* PORTFOLIO LINKS */
+
+	function load0(){
+		window.open("projects/svg/svg.html", "SVG Drawing");
+		<!-- this function will hide my projects and bring up its own section -->
+	}
+	
+	function load1() {
+		window.open("projects/guess/guess.html", "Guess");
+	}
+	
+	function load2() {
+		window.open("projects/minigames/brickbreaker.html", "Brick Breaker");
+	}
+
+	function load3() {
+		window.open("projects/minigames/pong.html", "Pong");
+	}

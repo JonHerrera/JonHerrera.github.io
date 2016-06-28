@@ -1,29 +1,58 @@
-.flex-container2 {
+/* these flex boxes are the whole sections of the portfolie page */
+.flex-containerPort {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: space-between;
+    align-content: center;
     align-items: center;
-	/* allowing the images to stack nicely */
+    }
+
+	.flex-itemPort:nth-child(1) {
+		order: 0;
+		flex: 0 1 75%;
+		align-self: center;
+		}
+
+	.flex-itemPort:nth-child(2) {
+		order: 2;
+		flex: 0 1 75%;
+		align-self: center;
+		}
+
+		/* these flex boxes are the polaroid style links */
+.flex-container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
     }
 
 	.flex-item2 {
 		order: 0;
-		flex: 1 1 auto;
-		align-self: auto;
+		flex: 0 1 25%;
+		align-self: stretch;
 		}
+
+#portfolioPage p {
+	color: black;
+	text-align: center;
+	margin-top: -20px;
+	/* making the paragraph closer to the nav bar to eliminate excess white space */
+}
 		
 #polaroids {
 /* this is where the projects are displayed */
-	margin-left: 10px;
+	margin: 10px 0 0 10px;
 	padding: 10px 10px 10px 10px;
 	/* spacing it out */	
 	background-color: rgba(190,190,190,.2);
 	border-radius: 15px;
 	/* styling it */
-	width: 650px;
-	height: 550px;
+	max-width: 100%;
+	height: auto;
 	overflow: hidden;
 }
 
@@ -43,11 +72,12 @@
 			opacity: .2;
 			/* making the image not so clear until hovered on */
 			transition: .6s;
+			cursor: pointer;
+			/* so the user can identify the link */
 		}
 		
 			figure img:hover {
 				opacity: 1;
-				cursor: pointer;
 			}
 
 		figcaption {
@@ -69,12 +99,10 @@
 	overflow: hidden;
 }
 
-	#projectDisplay p {
-		border: 1px solid red;
-		font-size: 18px;
-		padding: 20px 10px 20px 10px;
+@media screen and (max-width: 600px) {
+	
+	#portfolioPage p {
+		margin-top: 5px;
 	}
 	
-		#projectDisplay p#sig {
-			text-align: right;
-		}
+}

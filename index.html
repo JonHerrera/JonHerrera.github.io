@@ -7,10 +7,11 @@
     
         <meta charset="UTF-8">
 <!--		<meta name="viewport" content="width=content-width"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/homeStyle.css">
-		<link rel="stylesheet" type="text/css" href="css/portfolioStyle2.css">
+		<link rel="stylesheet" type="text/css" href="css/portfolioStyle.css">
 		
 		<script src="js/script.js" defer></script>
 		<!-- the defer is needed so that the page will load the carousel before the JS -->
@@ -22,7 +23,7 @@
 	<!-- this is for the navbar. function explained in the script sheet -->
     
         <header>
-        
+
 			A site by Jonathan Herrera
 		
         </header>
@@ -80,31 +81,31 @@ this was for a secondary navbar but the idea is scrapped for now
 				<!-- This is the area for the slideshow -->
 				  <article class="mySlides fade">
 					<!-- this styles the slides. the fade class is for the fade effects defined in CSS -->
-					<section class="figTitle">Catchy Title Goes Here</section>
+					<section class="slideTitle">Catchy Title Goes Here</section>
 					
 					<img src="images/placeholder.jpg">
 					
-					<section class="figCaption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet maximus rhoncus. Pellentesque vulputate sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
+					<section class="slideCaption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet maximus rhoncus. Pellentesque vulputate sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
 					
 				  </article>
 
 				  <article class="mySlides fade">
 				  
-					<section class="figTitle">And Here</section>
+					<section class="slideTitle">And Here</section>
 					
 					<img src="images/placeholder2.jpg">
 					
-					<section class="figCaption">sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
+					<section class="slideCaption">sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
 					
 				  </article>
 
 				  <article class="mySlides fade">
 				  
-					<section class="figTitle">Also Here</section>
+					<section class="slideTitle">Also Here</section>
 					
 					<img src="images/placeholder3.jpg">
 					
-					<section class="figCaption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </section>
+					<section class="slideCaption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </section>
 					
 				  </article>
 
@@ -199,14 +200,19 @@ this was for a secondary navbar but the idea is scrapped for now
 	
 		</section>  -->
 		
-		<section id="portfolioPage" class="sitePage fadePage">
-		<!-- all images should be 300w by 200h in png format -->
+		<section id="portfolioPage" class="flex-containerPort sitePage fadePage">
 		
-			<section id="polaroids" class="flex-container2">
+			<p class="flex-itemPort">
+				
+				This page contains small projects that I have worked on. Each project is a way of demonstrating the skills that I have learned at that point in time. As simple as they may appear, I have spent many hours working with each of them individually. They are not the most pollished pieces as more projects roll in but the experience gained from creating them will hopefully by noticeable in my upcoming pieces. <em> (Projects will open in new window) </em>
+				
+			</p>
 			
+			<section id="polaroids" class="flex-container2 flex-itemPort">
+			<!-- all images should be 300w by 200h in png format -->
 				<figure class="flex-item2">
 				
-					<img src="images/svg.png">
+					<img src="images/svg.png" onclick="load0()">
 				
 					<figcaption>
 						
@@ -217,7 +223,7 @@ this was for a secondary navbar but the idea is scrapped for now
 				
 				</figure>
 				
-				<figure class="flex-item2">
+				<figure class="flex-item2" onclick="load1()">
 				
 					<img src="images/guess.png">
 					
@@ -230,7 +236,7 @@ this was for a secondary navbar but the idea is scrapped for now
 					
 				</figure>
 				
-				<figure class="flex-item2">
+				<figure class="flex-item2" onclick="load2()">
 				
 					<img src="images/breakout.png">
 					
@@ -243,7 +249,7 @@ this was for a secondary navbar but the idea is scrapped for now
 					
 				</figure>
 				
-				<figure class="flex-item2">
+				<figure class="flex-item2" onclick="load3()">
 				
 					<img src="images/pong.png">
 					
@@ -257,38 +263,9 @@ this was for a secondary navbar but the idea is scrapped for now
 				</figure>
 				
 			</section>
-			
-			<section id="projectDisplay">
-			
-				<p>
-				
-					This page contains small projects that I have worked on. Each project is a way of demonstrating the skills that I have learned at that point in time. As simple as they may appear, I have spent many hours working with each of them individually. They are not the most pollished pieces as more projects roll in but the experience gained from creating them will hopefully by noticeable in my upcoming pieces.
-				
-				</p>
-				
-				<p id="sig">
-				
-					-- Jonathan Herrera
-				
-				</p>
-			
-			</section>	
-			
-			<script>
-					
-					var portDisplay = document.getElementById("polaroids");
-					var snapshot = document.getElementById("snapshots");
-					
-					function load0(){
-						portDisplay.style.display = "none";
-						snapshot.style.display = "flex";	
-						<!-- this function will hide my projects and bring up its own section -->
-					}
-
-				</script>
 
 		</section>
-		
+
     </body>
 
 </html>

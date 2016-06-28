@@ -2,9 +2,10 @@
 #homePage {
 /* this manipulates all the content below the nav bar */
 	margin: 0 20px 0 20px;
-	background-color: rgba(190,190,190,.2);
-	padding: 10px 5px 5px 5px;
-	border-radius: 15px;	
+	padding: 15px 5px 5px 5px;
+	background-color: rgba(0,0,0,0.05);
+	border-radius: 15px;
+	height: 100%;
 }
 
 /* creating flex for my contents */
@@ -17,20 +18,17 @@
     align-items: center;
     }
 
-	.flex-item:nth-child(1) {
+	.flex-item {
 		order: 0;
 		flex: 1 1 auto;
 		align-self: auto;
 		}
 
-	.flex-item:nth-child(2) {
-		order: 0;
-		flex: 1 1 auto;
-		align-self: auto;
-		}
+	
 	
 	/* this formats the twitter feeds position */
 	#feed {
+
 		margin-left: 30px;
 		text-align: center;
 		max-width: 420px;
@@ -103,7 +101,7 @@
 				}
 
 			/* Image title*/
-			.figTitle {
+			.slideTitle {
 				color: #424242;
 				font-size: 25px;
 				max-width: 50%;
@@ -115,7 +113,7 @@
 			}
 			
 			/* Caption text */
-			.figCaption {
+			.slideCaption {
 				color: #f2f2f2;
 				font-size: 18px;
 				padding: 8px 12px;
@@ -160,7 +158,7 @@
 			}
 
 				@keyframes fade {
-				  from {opacity: .4} 
+				  from {opacity: .2} 
 				  to {opacity: 1}
 				}
 
@@ -173,7 +171,7 @@
 	}
 
 		#feed {
-		margin-left: 30px;
+		margin: 10px 0 0 30px;
 		text-align: center;
 		max-width: 420px;
 	}
@@ -228,7 +226,7 @@
 				}
 
 			/* Image title*/
-			.figTitle {
+			.slideTitle {
 				color: #424242;
 				font-size: 18px;
 				max-width: 50%;
@@ -240,7 +238,7 @@
 			}
 			
 			/* Caption text */
-			.figCaption {
+			.slideCaption {
 				display: none;
 				/* because the screen is small. I do not want the caption to be displayed until the user chooses to show it */
 				color: #f2f2f2;
