@@ -11,11 +11,16 @@
         
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/homeStyle.css">
+		<link rel="stylesheet" type="text/css" href="css/aboutMeStyle.css">
 		<link rel="stylesheet" type="text/css" href="css/portfolioStyle.css">
 		
 		<script src="js/script.js" defer></script>
 		<!-- the defer is needed so that the page will load the carousel before the JS -->
-        <title> Homepage </title>
+		<script src="js/progressBars.js" defer></script>
+		<!-- this loads my status bars in AboutME -->
+		<script src="js/nightMode.js"></script>
+		
+        <title> Jonathan Herrera </title>
         
     </head>
     
@@ -37,12 +42,18 @@
 			
 			<ul class="overlay-content">
 				
-				<li> <a class="mainLink" onclick="currentSite(1)"> HOME </a> </li>
-				<li> <a class="mainLink" onclick="currentSite(2)"> ABOUT ME </a> </li>
-				<li> <a class="mainLink" onclick="currentSite(3)" onclick="load0()"> PORTFOLIO </a> </li>
+				<li> <a class="mainLink" onclick="currentSite(1)" onclick="resetBars()"> HOME </a> </li>
+				
+				<li> <a class="mainLink" onclick="currentSite(2)" id="runSkills"> ABOUT ME </a> </li>
+				
+				<li> <a class="mainLink" onclick="currentSite(3)"> PROJECTS </a> </li>
+				
 				<li> <a class="mainLink" onclick="currentSite(4)"> INTERESTS </a> </li>
+				
 				<li> <a class="mainLink" onclick="currentSite(5)"> CONTACT </a> </li>
 				<!-- the links are more like the slideshow than actual links as they will simply rotate the pages as opposed to loading a separate sheet each time -->
+				<li> <input type="checkbox" id="nightToggle" onclick="toggleNight()" style="color: pink;"><label for="nightToggle" id="nightLabel" style="color: #717171"> Night Mode (experimental)</label> </li>
+				
 			</ul>
 			
 		</nav>
@@ -83,7 +94,7 @@ this was for a secondary navbar but the idea is scrapped for now
 					<!-- this styles the slides. the fade class is for the fade effects defined in CSS -->
 					<section class="slideTitle">Catchy Title Goes Here</section>
 					
-					<img src="images/placeholder.jpg">
+					<img src="images/slides/placeholder.jpg">
 					
 					<section class="slideCaption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet maximus rhoncus. Pellentesque vulputate sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
 					
@@ -93,7 +104,7 @@ this was for a secondary navbar but the idea is scrapped for now
 				  
 					<section class="slideTitle">And Here</section>
 					
-					<img src="images/placeholder2.jpg">
+					<img src="images/slides/placeholder2.jpg">
 					
 					<section class="slideCaption">sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
 					
@@ -103,7 +114,7 @@ this was for a secondary navbar but the idea is scrapped for now
 				  
 					<section class="slideTitle">Also Here</section>
 					
-					<img src="images/placeholder3.jpg">
+					<img src="images/slides/placeholder3.jpg">
 					
 					<section class="slideCaption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </section>
 					
@@ -124,7 +135,7 @@ this was for a secondary navbar but the idea is scrapped for now
 					  <span class="dot" onclick="currentSlide(3)"></span> 
 					  <!-- each function is associated to a picture -->
 				  
-				</section>		
+					</section>		
 
 			</section>
 			
@@ -139,7 +150,107 @@ this was for a secondary navbar but the idea is scrapped for now
 			
 		</section>
 <!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE -->
-		<section id="aboutMePage" class="sitePage fadePage">
+		<section id="aboutMePage" class="sitePage fadePage flex-containerAbout">
+		
+			<figure id="quickBio" class="flex-itemAbout">
+			
+				<img src="images/me.png" id="selfie">
+<!--				
+				<canvas id="myCanvas" width="250" height="250" style="background-color: transparent;">
+				<!-- I want the excess canvas to not be shown -->
+<!--					<img src="images/me.png" id="selfie">
+					<!-- this is my face on the about me page. the image must be contained in the canvas tags so it will only have a chance to appear in the canvas -->
+<!--				</canvas>
+				
+				<script src="js/canvas.js"></script>
+				<!-- script must come after canvas because thats the way HTML loads -->
+				<figcaption>
+					19 years old. <br>
+					Young aspiring software developer. <br>
+					Loves learning, cooking, travelling, video-games, developing/designing. <br>
+					Though I may not be greatest at any of these things, I <em>am</em> the best at trying.
+				</figcaption>
+				
+			</figure>
+			
+			<section id="mtaStats" class="flex-itemAbout"> 
+			<!-- this section shows circular progress bars for the proficiencies tested for in the MTA -->
+			
+				<h4 style="margin:-20px;"> Microsoft Technology Associate: </h4> <br> <h5><i> HTML5 Application Development Fundamentals</i> </h5>
+			
+				<canvas class="chart" id="htmlSkill" width="150px" height="150px"
+				title="This is my proficiency in programming using HTML5 which is used for structuring websites.">
+				</canvas>
+					
+				<canvas id="cssSkill" width="150px" height="150px"
+				title="This is my proficiency in programming using Cascading Style Sheets which is used for styling webpages.">
+				</canvas>
+				
+				<canvas id="jsSkill" width="150px" height="150px"
+				title="This is my proficiency in programming using JavaScript which is used to create interactivity in websites.">
+				</canvas>
+				
+				<canvas id="lifeSkill" width="150px" height="150px"
+				title="This is my knowledge about the Application Life Cycle. This cycle explains the stages that an application must go through when being developed.">
+				</canvas>
+				
+				<p style="font-size: 10px;"><i> Hover for more information </i></p>
+				
+			
+			</section>
+			
+			<section class="experience flex-itemAbout">
+				<!-- TECHNICAL SKILLS -->
+				
+				<article class="skillList">
+				
+					<h2> Technical Skills - Learning in Progress </h2>
+					
+						<h3> Front-end Web Development:</h3>
+						<p> Proficient in constructing, designing, troubleshooting </p>
+						
+						<h3> Microsoft Office Suite: </h3> 
+						<p> Word, PowerPoint, Excel, Publisher </p>
+						
+						<h3> Developer Tools </h3> 
+						<p> Github, NetBeans, Notepad++ </p>
+						
+				</article>
+					
+				<article class="skillList">
+				
+					<h2> Awards and Certifications </h2>
+					
+						<h3> MTA: HTML5 Application Development Fundamentals </h3>
+						<p> Certified in using the fundamental applications for use in front-end web development </p>
+						
+						<h3> Skills Canada </h3>
+						<p> Participated in the national Skills Canada competition in the secondary school level for IT - Software Solutions for Businesses and achieved second place </p>
+						
+						<h3> Customer Service Excellence </h3>
+						<p> Have demonstrated the ability to communicate with customers and guests in a professional manner as well as the capacity to handle various situations that may arise </p>
+
+				</article>		
+						
+				<article class="skillList">
+				
+					<h2> Education and Training </h2>
+					
+						<h3> Technology Service Corps., NPower Canada </h3>
+						<p> Intensive fifteen week training in web and mobile applications development. <i> In progress </i></p>
+						
+						<h3> Assumption College School, Secondary School </h3>
+						<p>Graduated with OSSD, Honour Roll, and French Language Certificate</p>
+						
+				</article>
+				
+				<br>
+				
+					<a class="skillNext" onclick="plusSkills(1)">Next Page &#10095;</a>
+					<!-- these are the next/previous slide buttons -->
+				
+			</section>
+		
 		</section>
 
 <!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE -->
@@ -200,7 +311,7 @@ this was for a secondary navbar but the idea is scrapped for now
 	
 		</section>  -->
 		
-		<section id="portfolioPage" class="flex-containerPort sitePage fadePage">
+		<section id="portfolioPage" class="sitePage flex-containerPort fadePage">
 		
 			<p class="flex-itemPort">
 				
@@ -212,7 +323,7 @@ this was for a secondary navbar but the idea is scrapped for now
 			<!-- all images should be 300w by 200h in png format -->
 				<figure class="flex-item2">
 				
-					<img src="images/svg.png" onclick="load0()">
+					<img src="images/projects/svg.png" onclick="load0()">
 				
 					<figcaption>
 						
@@ -225,7 +336,7 @@ this was for a secondary navbar but the idea is scrapped for now
 				
 				<figure class="flex-item2" onclick="load1()">
 				
-					<img src="images/guess.png">
+					<img src="images/projects/guess.png">
 					
 					<figcaption>
 					
@@ -238,7 +349,7 @@ this was for a secondary navbar but the idea is scrapped for now
 				
 				<figure class="flex-item2" onclick="load2()">
 				
-					<img src="images/breakout.png">
+					<img src="images/projects/breakout.png">
 					
 					<figcaption>
 					
@@ -251,7 +362,7 @@ this was for a secondary navbar but the idea is scrapped for now
 				
 				<figure class="flex-item2" onclick="load3()">
 				
-					<img src="images/pong.png">
+					<img src="images/projects/pong.png">
 					
 					<figcaption>
 					

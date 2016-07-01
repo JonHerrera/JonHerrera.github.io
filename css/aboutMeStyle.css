@@ -1,0 +1,123 @@
+/* JONATHAN HERRERA */
+/* ABOUT ME PAGE */
+
+/* the flex for the two main sections, the quickBio and the fullBio */
+.flex-containerAbout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    }
+
+	.flex-itemAbout {
+		order: 0;
+		flex: 0 1 auto;
+		align-self: auto;
+		}
+
+
+#quickBio {
+/* this section is for my selfie and bio on the side */
+	margin: 5px;
+	padding: 5px;
+	/* nice spacing */
+	background-color: rgba(190, 190, 190, .2);
+	border-radius: 15px;
+	text-align: center;
+	/* styling */
+}
+	
+	#quickBio img {
+		max-width: 250px;
+		max-height: 250px;
+		border-radius: 15px 15px 0 0;
+	}
+
+	#quickBio figcaption {
+		margin-top: -5px;
+		padding: 5px 0 5px 0;
+		/* spacing out */
+		border-radius: 0 0 15px 15px;
+		background-color: rgba(0, 0, 0, .5);
+		color: white;
+		max-width: 250px;
+		/* the max <p> width is equal to that of the picture */
+	}
+	
+.experience {
+/* this sectoin is for my MTA stats */
+	margin: 5px;
+	width: 40vw;
+	/*so the experience allows the other two to stay on the one page
+	Will change  in the media query for better viewing*/
+	min-height: 40vh;
+	/* for responsiveness */
+	padding: 10px;
+	background-color: rgba(255,255,255,.8);
+	box-shadow: .5px .5px 2px black;
+	border-radius: 15px;
+			text-align: center;
+	color: black;
+	}	
+	
+	.experience h2 {
+	/* my section headings */
+		margin: 5px 0 5px 0;
+	}
+	
+	.experience h3 {	
+		margin-top: 5px;
+	}
+	
+			/* follows the same idea as the slideshow on the homepage stylesheet */
+			.skillNext {
+			cursor: pointer;
+			top: 0;
+			top: 50%;
+			width: auto;
+			margin-top: -22px;
+			padding: 10px;
+			color: grey;
+			font-weight: bold;
+			font-size: 12px;				
+			transition: 0.6s ease;
+			/* transition speed for the hover */
+			float: right;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.skillNext:hover {
+				color: black;
+			}
+	
+#mtaStats {
+/* this sectoin is for my MTA stats */
+	margin: 5px;
+	max-width: 400px;
+	/* want a 2x2 design */
+	height: auto;
+	/* for responsiveness */
+	padding-top: 30px;
+	background-color: rgba(255,255,255,.8);
+	box-shadow: .5px .5px 2px black;
+	border-radius: 15px;
+	text-align: center;
+	}
+	
+@media screen and (max-width: 1182px) {
+	
+	.experience {
+		width: 100vw;
+	}
+}
+
+	
+
+	
+	
+	
+	
+	
+	

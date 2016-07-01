@@ -27,9 +27,14 @@ body {
 	font-family: Verdana, Geneva, sans-serif;
 	background-image: url("../images/bgimage.png");
 	background-position: fixed;
-	background-repeat: repeat-y;
-	background-size: 100vw 100vh;
+	background-repeat: no-repeat;
+	background-size: auto auto;
 	/* these settings create a global background that is locked in place, scaling to the windows size */
+	overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 header {
@@ -234,5 +239,8 @@ nav.overlay {
 		right: 45px;
 		font-size: 36px !important; /* Override the font-size specified earlier (36px) for all navigation links */
 	}
-
+	
+	
+	
+}
 	/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */

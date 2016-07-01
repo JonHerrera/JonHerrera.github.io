@@ -3,6 +3,8 @@
 /* SITE NAVIGATION */
 /* the following function will load the site pages depending on which link is clicked */
 /* the functionality is the same as the slideshow below. each "page" is simply being hidden from the viewer until the link is clicked. this prevents loading other pages as everything is on the same page */
+	window.addEventListener("onload", nightToggle);
+	
 	var siteIndex = 1;
 	showSite(siteIndex);
 	/* this variable is creating to number each site page */
@@ -40,8 +42,33 @@
 		/* this makes the page appear. the value is flex becuase if it was block then all of the contents would become block items and then stack on each other */
 		
 		links[siteIndex-1].className = " active";
-		/* this will highlight the dot that associated with the active slide */
+		/* this will highlight the link that is associated with the active page */
 	}	
+	
+/* NAVBAR OVERLAY */
+/* from w3schools */
+	/* Open when someone clicks on the span element */
+	function openNav() {
+		document.getElementById("myNav").style.height = "100%";
+	}
+
+	/* Close when someone clicks on the "x" symbol inside the overlay */
+	function closeNav() {
+		document.getElementById("myNav").style.height = "0%";
+	}
+	
+	/* when the mobile overlay was closed and the browser resized back to maximum width, the nav would not appear because the width was set to 0. with this function, the browser will automatically bring the nav back when resized */
+	function navChange() {
+		var w = window.outerWidth;
+		
+		if (w >600) {
+			document.getElementById("myNav").style.height = "100%";
+		}
+		
+		if (w <= 600) {
+			document.getElementById("myNav").style.height = "0%";
+		}
+	}
 	
 /* SLIDESHOW */
 /* from w3schools */
@@ -91,36 +118,52 @@
 		/* this will highlight the dot that associated with the active slide */
 	}
 	
-/* NAVBAR OVERLAY */
-/* from w3schools */
-	/* Open when someone clicks on the span element */
-	function openNav() {
-		document.getElementById("myNav").style.height = "100%";
+/* ABOUT ME SKILLS CAROUSEL */
+
+	var skillIndex = 1;
+	showSkills(skillIndex);
+	/* this variable is creating to number each slide */
+
+	function plusSkills(n) {
+		showSkills(skillIndex += n);
+	/* this is the function called upon when the previous/next silde buttons are clicked. the buttons are -1 and +1 */
 	}
 
-	/* Close when someone clicks on the "x" symbol inside the overlay */
-	function closeNav() {
-		document.getElementById("myNav").style.height = "0%";
+
+	function currentSkill(n) {
+	  showSkills(skillIndex = n);
+	 /* this is to highlight the current circle according to the picture */
+	  
 	}
-	
-	/* when the mobile overlay was closed and the browser resized back to maximum width, the nav would not appear because the width was set to 0. with this function, the browser will automatically bring the nav back when resized */
-	function navChange() {
-		var w = window.outerWidth;
+
+	function showSkills(n) {
+		var i;
+		/* this variable is used to access the slideIndex */
+		var skills = document.getElementsByClassName("skillList");
 		
-		if (w >600) {
-			document.getElementById("myNav").style.height = "100%";
-		}
+		if (n > skills.length) 
+			{skillIndex = 1} 
 		
-		if (w <= 600) {
-			document.getElementById("myNav").style.height = "0%";
+		if (n < 1) 
+			{skillIndex = skills.length}
+		/* the two above functions are used to give each skide a value */
+		
+		for (i = 0; i < skills.length; i++) {
+			skills[i].style.display = "none"; 
 		}
+		/* the slides not in use are hidden */
+		
+		skills[skillIndex-1].style.display = "block";
+		/* this makes everything appear */
+		
 	}
+
 	
 /* PORTFOLIO LINKS */
 
 	function load0(){
 		window.open("projects/svg/svg.html", "SVG Drawing");
-		<!-- this function will hide my projects and bring up its own section -->
+		// this function will hide my projects and bring up its own section
 	}
 	
 	function load1() {
