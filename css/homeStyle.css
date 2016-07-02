@@ -59,9 +59,15 @@
 		  box-shadow: -.5px .5px 5px #717171;
 		}
 		
+			.mySlides {
+				max-height: 400px;
+				/* limiting the max height of the image container */
+			}
+		
 			.mySlides img {
 				width: 100%;
-				height: auto;
+				max-height: 600px;
+				/* so the image does not squish */
 				margin-bottom: -5px;
 				/* this makes the image snug with the slideshow area */
 			}
