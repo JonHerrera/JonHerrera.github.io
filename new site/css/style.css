@@ -1,0 +1,96 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Josefin Slab', serif;
+	overflow-x: hidden;
+	}
+
+#pageLanding {
+	width: 100vw;
+	height: 100vh;
+	/* making a background image rather than an <img> for the parallax */
+	background-image: url("../images/backgrounds/me.jpg");
+	background-repeat: no-repeat;
+	background-size: 50vw 100vh;
+/* 	background-position: -50vw 0; */
+		/* a psuedo-crop to show only half the image. it makes me look fat though */
+	background-attachment: fixed; 
+		/* this makes the parallax!! */
+}
+
+	#intro {
+		float: right;
+		display: inline;
+		padding-top: 25vh;  
+			/* this adds white space at the top */
+		width: 50vw;
+		height: 75vh;
+			/* 75vh becuase of the padding */
+	}
+	
+		#intro > p {
+			font-size: 4em;
+		}
+		
+		#quickNav {
+			width: auto;
+			height: auto;
+			border: 1px solid red;
+		}
+		
+			.icon {
+				height: 100%;
+				width: 10vw;
+				box-shadow: 1px .5px 2.5px black;
+					/* there's a gap between each icon for some reason */
+			}
+			
+			.icon:first-child {
+				margin: 0;
+					/* to offset the -5px to the left */
+			}
+			
+	#navMain {
+		position: absolute;
+		bottom: 0;
+	}
+	
+		#navMain > ol {
+			list-style-type: none;
+		}
+		
+			#navMain > ol > li {
+				display: inline;
+				margin-right: 10px;
+				width: 50%;
+			}
+		
+				#navMain > ol > li > a {
+					text-decoration: none;
+					color: black;
+					font-size: 1.70em;
+					font-weight: bold;
+
+				}
+	
+		
+		
+.transition {
+	/* the transition/title bar for the next page that 'wipes' the previous page */
+	height: 7vh;
+	width: 100vw;
+	padding-left: 2em;
+}
+	
+	.transition > a {
+		font-size: 7vh;
+		padding: 1%;
+		color: white;
+		text-decoration: none;
+	}
+	
+.page {
+	height: 93vh;
+	width: 100vw;
+	/* for uniformity of all the pages. 7vh for the transition bar and the rest for the page */
+}
