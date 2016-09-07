@@ -2,3 +2,15 @@
 	background-color: rgb(54, 215, 183); 
 		/* green color */
 }
+
+	#pageProjects {
+		background-image: url("../images/backgrounds/coding.jpg");
+		background-attachment: fixed;
+		background-size: 50vw 100vh;
+		background-repeat: no-repeat;
+		overflow-y: hidden;
+	}
+
+	#contentProjects {
+
+	}

@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	font-family: 'Josefin Slab', serif;
+	background-color: #F5F5F5;
 	overflow-x: hidden;
 	}
 
@@ -80,6 +81,7 @@
 	height: 7vh;
 	width: 100vw;
 	padding-left: 2em;
+	overflow-y: hidden;
 }
 	
 	.transition > a {
@@ -87,6 +89,8 @@
 		padding: 1%;
 		color: white;
 		text-decoration: none;
+		background-color: rgba(255,255,255, 0);
+			/* for some reason the bgcolor of the page headings is the same as the page bg? overriding to transparent */
 	}
 	
 .page {
