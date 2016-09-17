@@ -3,8 +3,6 @@
 //followed tutorial by Adam Khoury on YouTube
 //probably a much better way to optimize my code but I'll figure it out later
 //HTML
-window.addEventListener("load", runBars);
-
 var g1 = document.getElementById("htmlSkill").getContext("2d");
 
 	var al = 0;
@@ -239,6 +237,9 @@ var g4 = document.getElementById("lifeSkill").getContext("2d");
 		//this will animate the progress bar
 	}
 
+	document.getElementById("runSkills").addEventListener("click", runBars);
+	//this makes it so that the animation will only occur when the About Me link is clicked
+	
 function runBars() {
 	resetBars();
 	runHTML();

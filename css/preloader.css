@@ -1,0 +1,103 @@
+/* PRELOADER STYLING */
+/* avoiding the use of JavaScript */
+	
+#preLoader {
+/* this is the animation that will initially appear when the page loads
+	this allows the content of the site to load to make the site run smoother*/
+	height: 100vh;
+	width: 100vw;
+	background: white;
+	position: fixed;
+	z-index: 1000;
+	/* so the preloader appears on top */
+}
+
+	.loaded #preLoader {
+		background: transparent;
+	}
+
+	#leftLoader {
+		width: 50vw;
+		height: 100%;
+		background: #F5F5F5;
+		position: fixed;
+	}
+	
+		.loaded #leftLoader {
+			transform: translateY(100%);
+			transition: all 0.3s 0.6s ease-out;
+		}
+	
+	#rightLoader {
+		width: 50vw;
+		height: 100%;
+		background: white;
+		right: 0;
+		position: fixed;
+	}
+	
+		.loaded #rightLoader {
+			transform: translateY(-100%);
+			transition: all 0.3s 0.6s ease-out;
+		}
+
+	#loader {
+		background: white;
+		/* positioning the loader into the center of the screen */
+		top: 50%;
+		left: 50%;
+		margin-top: -60px;
+		margin-left: -60px;
+		/* b/c things are placed from the top left corner of the container, we are offseeting it to 
+	make it actually go in the middle of the screen. The container is 120px so approximately half*/
+		position: absolute;	
+			/* so that it actually moves to that position */
+		border: 6px solid transparent; /* Light grey */
+		border-top: 6px solid rgb(25, 181, 254); /* Blue */
+		border-radius: 50%;
+			/* the circle is actually a box, we just rounded it off */
+		width: 120px;
+		height: 120px;
+		animation: spin 2s linear infinite;
+			/* this calls the animation defined below and states the duration and loops */
+		overflow: hidden;
+	}
+	
+	#loader:before {
+		/* instead of creating more loader tags, we use pseudo classes to make 2 more */
+		content: "";
+			/* this makes the next line appear */
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		right: 5px;
+		bottom: 5px;
+			/* the above positionings are the distances away from the outermost square (spacing between circles) */
+		border: 6px solid transparent;
+		border-top: 6px solid rgb(224, 130, 131);
+		border-radius: 50%;
+		/* again, made only the top border appear */
+		animation: spin 3s linear infinite;
+		/* the animations for each line are multiples of each other so they will all overlap at the same time */
+	}
+	
+	#loader:after {
+		content: "";
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		right: 15px;
+		bottom: 15px;
+		border: 6px solid transparent;
+		border-top: 6px solid rgb(249, 191, 59);
+		border-radius: 50%;
+		animation: spin 6s linear infinite;
+	}
+
+		@keyframes spin {
+		/* defining the 'spin' keyframe by placing the properties that will occur */
+			0% { transform: rotate(0deg); }
+			/* beginning of animation */
+			100% { transform: rotate(360deg); }
+			/* animation is complete */
+		}

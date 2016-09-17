@@ -1,0 +1,292 @@
+/* JONATHAN HERRERA */
+#homePage {
+/* this manipulates all the content below the nav bar */
+	margin: 0 20px 0 20px;
+	padding: 15px 5px 5px 5px;
+	background-color: rgba(0,0,0,0.05);
+	border-radius: 15px;
+	height: 100%;
+}
+
+/* creating flex for my contents */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    }
+
+	.flex-item {
+		order: 0;
+		flex: 1 1 auto;
+		align-self: auto;
+		}
+
+	
+	
+	/* this formats the twitter feeds position */
+	#feed {
+
+		margin-left: 30px;
+		text-align: center;
+		max-width: 420px;
+	}
+		/* again formatting the twitter box */
+		.twitter-timeline {
+			box-shadow: -.5px .5px 5px #717171;
+			max-width: 100% !important;
+		}
+		
+	/* Slideshow from w3schools */
+	/* formats buttons, picture area, and all assoiciations */
+	#slideShowWhole {
+		max-width: 700px;
+		overflow: hidden;
+	}
+
+		/* the area in which the image, prev/next, and captions */
+		.slideshow-container {
+		  max-width: 800px;
+		  /* the slideshow will only occupy this max width */
+		  max-height: 600px;
+		  position: relative;
+		  /* the slideshow is in a position relative to the screen */
+		  overflow: hidden;
+		  /* prevents any content from flowing out of the defined area */
+		  border: 1px solid #717171;
+		  box-shadow: -.5px .5px 5px #717171;
+		}
+		
+			.mySlides {
+				max-height: 400px;
+				/* limiting the max height of the image container */
+			}
+		
+			.mySlides img {
+				width: 100%;
+				max-height: 600px;
+				/* so the image does not squish */
+				margin-bottom: -5px;
+				/* this makes the image snug with the slideshow area */
+			}
+
+			/* Next & previous buttons */
+			.prev, .next {
+				cursor: pointer;
+				/* make the previous/advance slides more apparent */
+				position: absolute;
+				/* the arrows will stay in the same place relative to the slideshow area */
+				
+				/* styling the buttons and positioning in place */
+				top: 0;
+				top: 50%;
+				width: auto;
+				margin-top: -22px;
+				padding: 10px;
+				color: rgba(255, 255, 255, 0.5);
+				font-weight: bold;
+				font-size: 25px;
+				border-radius: 0 10px 10px 0;
+				
+				transition: 0.6s ease;
+				/* transition speed for the hover */
+			}
+
+				/* Position the "next button" to the right */
+				.next {
+					right: 0;
+					border-radius: 10px 0 0 10px;
+				}
+
+				/* On hover, add a black background color with a little bit see-through */
+				.prev:hover, .next:hover {
+					background-color: rgba(0,0,0,0.75);
+					color: white;
+				}
+
+			/* Image title*/
+			.slideTitle {
+				color: #424242;
+				font-size: 25px;
+				max-width: 50%;
+				padding: 0px 12px;
+				position: absolute;
+				top: 20px;
+				background-color: rgba(255, 255, 255, 0.75);
+				text-transform: uppercase;
+			}
+			
+			/* Caption text */
+			.slideCaption {
+				color: #f2f2f2;
+				font-size: 18px;
+				padding: 8px 12px;
+				position: absolute;
+				bottom: 7.5px;
+				right: 0;
+				max-width: 75%;
+				text-align: right;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			
+			/* want to format the area which the dots take up */
+			#dotArea {
+				padding: 0;
+				text-align: left;
+				max-width: 50%;
+				margin-top: -22px;
+			}
+			
+			/* The dots/bullets/indicators */
+			.dot {
+				cursor:pointer;
+				/* so you know you can click it */
+				height: 13px;
+				width: 13px;
+				margin: 0 2px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+				/* places the bullets side by side */
+				transition: background-color 0.6s ease;
+			}
+
+				#dotArea span.active, .dot:hover {
+					background-color: #717171;
+				}
+
+			/* Fading animation */
+			.fade {
+				animation-name: fade;
+				animation-duration: 1.5s;
+			}
+
+				@keyframes fade {
+				  from {opacity: .2} 
+				  to {opacity: 1}
+				}
+
+@media screen and (max-width: 600px) {
+
+	#homePage {
+		margin: 26px 5px 0 5px;
+		background-color: transparent;
+		text-align: center;
+	}
+
+		#feed {
+		margin: 10px 0 0 30px;
+		text-align: center;
+		max-width: 420px;
+	}
+		/* again formatting the twitter box */
+		.twitter-timeline {
+			box-shadow: -.5px .5px 5px #717171;
+			max-width: 100% !important;
+		}
+		
+	/* Slideshow from w3schools */
+	/* formats buttons, picture area, and all assoiciations */
+	#slideShowWhole {
+		max-width: 700px;
+		overflow: hidden;
+	}
+
+		/* the area in which the image, prev/next, and captions */
+		.slideshow-container {
+		  max-width: 800px;
+		  /* the slideshow will only occupy this max width */
+		  max-height: 600px;
+		  position: relative;
+		  /* the slideshow is in a position relative to the screen */
+		  overflow: hidden;
+		  /* prevents any content from flowing out of the defined area */
+		  border: 1px solid #717171;
+		  box-shadow: -.5px .5px 5px #717171;
+		}
+		
+			.mySlides img {
+				width: 100%;
+				height: auto;
+				margin-bottom: -5px;
+				/* this makes the image snug with the slideshow area */
+			}
+
+			/* Next & previous buttons */
+			.prev {
+				left: 0;
+			}
+
+				/* Position the "next button" to the right */
+				.next {
+					right: 0;
+					border-radius: 10px 0 0 10px;
+				}
+
+				/* On hover, add a black background color with a little bit see-through */
+				.prev:hover, .next:hover {
+					background-color: rgba(0,0,0,0.75);
+					color: white;
+				}
+
+			/* Image title*/
+			.slideTitle {
+				color: #424242;
+				font-size: 18px;
+				max-width: 50%;
+				padding: 0px 12px;
+				position: absolute;
+				top: 20px;
+				background-color: rgba(255, 255, 255, 0.75);
+				text-transform: uppercase;
+			}
+			
+			/* Caption text */
+			.slideCaption {
+				display: none;
+				/* because the screen is small. I do not want the caption to be displayed until the user chooses to show it */
+				color: #f2f2f2;
+				font-size: 12px;
+				padding: 8px 12px;
+				position: absolute;
+				bottom: 50px;
+				right: 0;
+				max-width: 100%;
+				text-align: right;
+				background-color: rgba(0, 0, 0, 0.75);
+			}
+			
+				article.mySlides:hover .figCaption {
+					display: block;
+					bottom: 0;
+				}
+			
+			/* want to format the area which the dots take up */
+			#dotArea {
+				padding: 0;
+				text-align: left;
+				max-width: 50%;
+				margin-top: -22px;
+			}
+			
+			/* The dots/bullets/indicators */
+			.dot {
+				cursor:pointer;
+				/* so you know you can click it */
+				height: 13px;
+				width: 13px;
+				margin: 0 2px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+				/* places the bullets side by side */
+				transition: background-color 0.6s ease;
+			}
+
+				#dotArea > span.active, .dot:hover {
+					background-color: #717171;
+					}
+
+}

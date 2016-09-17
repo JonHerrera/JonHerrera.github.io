@@ -1,246 +1,112 @@
-/* JONATHAN HERRERA */
-/* contains the style for the navbar, footer, and basic formatting */
-/*
-THEME 
-light grey background-color: rgba(190,190,190,.2);
-grey text color: #717171;
-
-BASIC PAGE STYLE BG
-	margin: 0 20px 0 20px;
-	background-color: rgba(190,190,190,.2);
-	padding: 10px 5px 5px 5px;
-	border-radius: 15px;	
-*/
-
 * {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-	background-color: #FAFAFA;
-/*	background-image: url("../images/myLogoTransparent.png");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: bottom left;
-	/* creating a background image that will stay in that position regardless of scroll */
-	font-family: Verdana, Geneva, sans-serif;
-	background-image: url("../images/bgimage.png");
-	background-position: fixed;
-	background-repeat: no-repeat;
-	background-size: auto auto;
-	/* these settings create a global background that is locked in place, scaling to the windows size */
+	padding: 0;
+	margin: 0;
+	font-family: 'Josefin Slab', serif;
+	background-color: transparent;
 	overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
-header {
-	text-align: right;
-}
-
-	header img {
-		display: inline;
-		max-height: 26px;
-		max-width: 26px;
-	}
-
-/* the navbar area */
-nav.overlay {
-    text-align: left;
-	/* bringing the links to the left */
-    max-height: 32px;
-	/* adjusting the height will prevent any overflow from showing */
-	overflow: hidden;
-	margin-bottom: 50px;
-	/* pushing the content down by default */
-	border-bottom: 1px solid black;
-}
-
-	/* only want these buttons to appear for the mobile overlay */
-	.closebtn, .openbtn {
-		display: none;
-		cursor: pointer;
-	}
-
-	nav.overlay ul {
-		list-style-type: none;
-		/* getting rid of bullets */
-		
-	}
-		/* the actual texts container */
-		nav ul li {
-			display: inline;
-			/* this makes all the links in one line */
-			margin-right: 1px;
-			/* spacing the links out a bit */
-			text-align: center;
-		}
-		
-		/* the hyperlink itself */
-		nav.overlay ul li a {
-			font: 26px "Palatino Linotype", "Book Antiqua", Palatino, serif;
-			color: #6C7A89;
-			text-decoration: none;
-			/* getting rid of underlines */
-			padding: 2px;
-			border-top: 1px solid white;
-			transition: .35s ease;
-			/* the transition is for mouse event i.e. hover */
-			cursor: pointer;
-			/* because these aren't hyperlinks I am defining the cursor for them */
-		}
-
-			nav.overlay li:first-child {
-				margin-left: 25px;
-				/* this creates some space between the first link of the edge of the screen */
-			}
-			
-			nav.overlay li > a:hover {
-				color: black;
-			}
-			
-			nav.overlay li > a:active {
-				color: #F6F6F6;
-			}
-			
-/*				a.active {
-					background-color: black;
-				}
-				highlights whats not active too. Need to fix */
-				
-/*	was trying to make a secondary navbar for when you click a link but can't yet figure it out
-	nav#extraLinks {
-		background-color: grey;
-		text-align: center;
-		display: none;
 	}
 	
-		.secondaryLinks {
-			display: none;
-		}
-*/
-
-/* this animation here is for when a different link is clicked so the page fades */
-/* good for loading content as it is a smooth transition */
-	.fadePage {
-		animation-name: fadePage;
-		animation-duration: 1s;
-		}
-
-		@keyframes fadePage {
-		from {opacity: .1} 
-		to {opacity: 1}
-		}
-	
-@media screen and (max-width: 1000px) {
-
+.openbtn {
+	/* for the overlay nav */
+	cursor: pointer;
+	position: fixed;
+	right: 20px;
+	top: 0;
+	width: auto;
+	font-size: 5vh;
+	/* so it fits in the page title bar */
 }
 
-@media screen and (max-width: 600px) {
-
-body{
-	margin-top: 18px;
+#pageLanding {
+	width: 100vw;
+	height: 100vh;
+	/* making a background image rather than an <img> for the parallax */
+	background-image: url("../images/backgrounds/me.jpg");
+	background-repeat: no-repeat;
+	background-size: 50vw 100vh;
+/* 	background-position: -50vw 0; */
+		/* a psuedo-crop to show only half the image. it makes me look fat though */
+	background-attachment: fixed; 
+		/* this makes the parallax!! */
 }
 
-	header {
-		display: none;
-	}
+/* The main page styling */
 
-/* now I want the overlay open/ close buttons to appear */
-.openbtn, .closebtn {
-	display: inline;
-}
-
-	.openbtn {
-		font-size: 16px;
-		color: black;
-		position: fixed;
-		z-index: 1;
-		/* this will stay above everything */
-		top:0;
-		left: 0;
-		/* making it snug to the top of the page */
-		width: 100%;
-		/* the whole top area is clickable to reveal the navbar overlay */
-		height: auto;
-		text-align: center;
-		background-color: rgba(190,190,190,.2); 	
-	
-	}
-
-/* The Overlay (background) */
-nav.overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
-	height: 0;
-	max-height: 100vh;
-    width: 100%;
-    position: fixed; 
-	/* Stay in place */
-    z-index: 2; 
-	/* Sit on top of all other body elements. without ths the slideshow would be on top of the overlay*/
-    left: 0;
-    top: 0;
-    background-color: rgb(255,255,255); 
-	/* Black fallback color */
-    background-color: rgba(255,255,255, .9); 
-	/* white w/opacity */
-    overflow-x: hidden; 
-	/* Disable horizontal scroll */
-/*	overflow-y: auto;
-	/* for those reeeaaally tiny screens */
-    transition: 0.5s; 
-	/* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-
-	/* Position the content inside the overlay */
-	ul.overlay-content {
-		position: relative;
-		top: 15%;
-		/* 15% from the top */
-		width: 100%;
-		/* 100% width */
-		text-align: center; 
-		/* Centered text/links */
-		margin-top: 0;
-		/* 30px top margin to avoid conflict with the close button on smaller screens */
-	}
-
-		
-		/* The navigation links inside the overlay */
-			nav.overlay a {
-				padding: 8px;
-				text-decoration: none;
-				font-size: 18px;
-				color: #818181;
-				display: block;
-				/* Display block instead of inline */
-				transition: 0.3s; 
-				/* Transition effects on hover (color) */
-				border: 0;
-				/* overriding previous border properties */
-			}
-
-				/* When you mouse over the navigation links, change their color */
-				nav.overlay a:hover, nav.overlay a:focus {
-					color: black;
-				}
-				
-					nav.overlay a:active {
-						color: #F6F6F6;
-					}
-
-	/* Position the close button (top right corner) */
-	.closebtn {
+	#intro {
 		position: absolute;
-		top: 10px;
-		right: 45px;
-		font-size: 36px !important; /* Override the font-size specified earlier (36px) for all navigation links */
+		left: 50vw;
+		display: inline;
+			/* this adds white space at the top */
+		width: 50vw;
+		height: 100vh;
+			/* 75vh becuase of the padding */
 	}
 	
+		#intro > p > a {
+			text-decoration: none;
+			font-weight: bold;
+			color: black;
+			right: 0;
+		}
 	
+		#intro > header {
+			font-size: 4em;
+			margin-top: 25vh;
+		}
+		
+			header > p {
+				font-size: .75em;
+				/* this font size is relative to the font size in the header
+					right now its set to be 75% of the header font size*/
+				margin-left: 2vw;
+				/* making a little indent */
+			}
+
+	#links {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		/* b/c the nav isnt in the front page <section> I am positioning them so it looks like they are */
+	}
 	
+		#links > ul {
+			list-style-type: none;
+		}
+		
+			#links > ul > li {
+				display: inline;
+				margin-right: 10px;
+				width: 50%;
+			}
+		
+				#links > ul > li > a {
+					text-decoration: none;
+					color: black;
+					font-size: 1.70em;
+					font-weight: bold;
+
+				}
+		
+.transition {
+	/* the transition/title bar for the next page that 'wipes' the previous page */
+	height: 7vh;
+	width: 100vw;
+	padding-left: 2em;
+	overflow-y: hidden;
 }
-	/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+	
+	.transition > a {
+		font-size: 7vh;
+		padding: 1%;
+		color: white;
+		text-decoration: none;
+		background-color: rgba(255,255,255, 0);
+			/* for some reason the bgcolor of the page headings is the same as the page bg? overriding to transparent */
+	}
+	
+.page {
+	height: 93vh;
+	width: 100vw;
+	/* for uniformity of all the pages. 7vh for the transition bar and the rest for the page */
+}
+

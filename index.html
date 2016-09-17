@@ -1,450 +1,261 @@
-<!-- JONATHAN HERRERA -->
-<!doctype html>
+<!DOCTYPE HTML>
 
 <html>
 
-    <head> 
-    
-        <meta charset="UTF-8">
-<!--		<meta name="viewport" content="width=content-width"> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/homeStyle.css">
-		<link rel="stylesheet" type="text/css" href="css/aboutMeStyle.css">
-		<link rel="stylesheet" type="text/css" href="css/portfolioStyle.css">
-		<link rel="stylesheet" type="text/css" href="css/interestsStyle.css">
+	<head>
+	
+		<title> Jonathan Herrera's Portfolio </title>
+		<meta charset="UTF-8">
 		
-		<script src="js/script.js" defer></script>
-		<!-- the defer is needed so that the page will load the carousel before the JS -->
-		<script src="js/progressBars.js" defer></script>
-		<!-- this loads my status bars in AboutME -->
-		<script src="js/nightMode.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+		<link href="css/stylePreLoader.css" type="css/text" rel="stylesheet">
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		<link href="css/styleAbout.css" type="text/css" rel="stylesheet">
+		<link href="css/styleProjects.css" type="text/css" rel="stylesheet">
+		<link href="css/styleInterests.css" type="text/css" rel="stylesheet">
+		<link href="css/styleContact.css" type="text/css" rel="stylesheet">
 		
-        <title> Jonathan Herrera </title>
-        
-    </head>
-    
-    <body onresize="navChange()">
-	<!-- this is for the navbar. function explained in the script sheet -->
-    
-        <header>
+		<script src="js/nav.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/scripts.js" defer></script>
+
+
+		
+		
+	</head>
+	
+	<body>
+	
+<!-- 		<a class="openbtn" onclick="openNav()">☰</a> -->
+		<!-- I dunno how it happened, but you can only click it once you leave the landing page, cool!
+			but I need to make it hidden until you leave the landing page-->
 			
-			A site by Jonathan Herrera (Under construction) <br>
-			Click <a href="new site/index.html"> here </a> to go to my new site. (in progress)
-		
-        </header>
-        
-		<!-- the overlay and overlay-content classes are what is being mainpulated when the screen is mobile view -->
-        <nav id="myNav" class="overlay">
-        	
-			<!-- Button to close the overlay navigation -->
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<!-- the X symbol. or "times" in multiplication -->
+	<!-- <article id="preLoader"> -->
+	
+	<!-- I have two loader halves to make a cool transition -->
+<!-- 		<article id="leftLoader"></article>
+		<article id="rightLoader"></article>
+	
+		<div id="loader"></div>
+	
+	</article> -->
+	
 			
-			<ul class="overlay-content">
+
+	<!-- this is the initial landing page tat contains my face/name/title and quick links -->
+		<section id="pageLanding">
+		<!-- the section contains the background image and the article formats all content to the unoccupied side -->
+			<article id="intro">
+			
+				<p> Click <a href="old site/index.html"> here </a> to visit my old site </p>
+			
+				<header> Jonathan Herrera <br>
+				<p> Junior Software Developer </p> </header>
 				
-				<li> <a class="mainLink" onclick="currentSite(1)" onclick="resetBars()"> HOME </a> </li>
+<!-- 				<a href="#transitionAbout"> About Me </a> -->
+						<!-- the link should actually connect to the transition so it shows as well -->
 				
-				<li> <a class="mainLink" onclick="currentSite(2)" id="runSkills"> ABOUT ME </a> </li>
+<!-- 				<section id="quickNav">
+					<img class="icon" src="images/icons/iconAbout.svg">
+					<img class="icon" src="images/icons/iconProjects.svg">
+					<img class="icon" src="images/icons/iconInterests.svg">
+					<img class="icon" src="images/icons/iconContact.svg">
+				</section> -->
 				
-				<li> <a class="mainLink" onclick="currentSite(3)"> PROJECTS </a> </li>
-				
-				<li> <a class="mainLink" onclick="currentSite(4)"> INTERESTS </a> </li>
-				
-				<li> <a class="mainLink" onclick="currentSite(5)"> CONTACT </a> </li>
-				<!-- the links are more like the slideshow than actual links as they will simply rotate the pages as opposed to loading a separate sheet each time -->
-				<li> <input type="checkbox" id="nightToggle" onclick="toggleNight()" style="color: pink;"><label for="nightToggle" id="nightLabel" style="color: #717171"> Night Mode (experimental)</label> </li>
-				
-			</ul>
+			</article>
+		
+		<nav id="links">
+			
+				<ul>
+					<li> <a href="#transitionAbout" style="color:rgb(25, 181, 254)"> about me </a> </li>
+					<li> <a href="#transitionProjects" style="color:rgb(54, 215, 183)"> my projects </a> </li>
+					<li> <a href="#transitionInterests" style="color:rgb(224, 130, 131)"> my interests </a> </li>
+					<li> <a href="#transitionContact" style="color:rgb(249, 191, 59)"> connect </a> </li>
+				</ul>
 			
 		</nav>
+	
 		
-		<!-- Use any element to open/show the overlay navigation menu -->
-			<span class="openbtn" onclick="openNav()">☰</span>
-		
-		<!--	<nav id="extraLinks">
-this was for a secondary navbar but the idea is scrapped for now			
-				<ul id="contactNav">
-				
-					<li> <a href="#"> LinkC </a> </li>
-					<li> <a href="#"> LinkC </a> </li>
-					<li> <a href="#"> LinkC </a> </li>
-				
-				</ul>
-				
-				<ul id="interestsNav">
-				
-					<li> <a href="#"> LinkI </a> </li>
-					<li> <a href="#"> LinkI </a> </li>
-					<li> <a href="#"> LinkI </a> </li>
-				
-				</ul>
-			
-			</nav> -->
-
-<!-- HOMEPAGE --><!-- HOMEPAGE --><!-- HOMEPAGE --><!-- HOMEPAGE --><!-- HOMEPAGE --><!-- HOMEPAGE --><!-- HOMEPAGE -->
-		<section id="homePage" class="sitePage flex-container fadePage">
-		
-			
-			<section id="slideShowWhole" class="flex-item">
-			<!-- so I can manipulate BOTH the picture area and dots -->
-			
-				<section class="slideshow-container">
-				<!-- This is the area for the slideshow -->
-				   <article class="mySlides fade">
-				  
-					<section class="slideTitle">And Here</section>
-					
-					<img src="images/slides/placeholder2.jpg">
-					
-					<section class="slideCaption">sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
-					
-				  </article>
-				  
-				  <article class="mySlides fade">
-					<!-- this styles the slides. the fade class is for the fade effects defined in CSS -->
-					<section class="slideTitle">Catchy Title Goes Here</section>
-					
-					<img src="images/slides/skillsComp.jpg">
-					
-					<section class="slideCaption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet maximus rhoncus. Pellentesque vulputate sit amet arcu at sodales. Cras interdum arcu sed rutru</section>
-					
-				  </article>
-
-				 
-
-				  <article class="mySlides fade">
-				  
-					<section class="slideTitle">Also Here</section>
-					
-					<img src="images/slides/placeholder3.jpg">
-					
-					<section class="slideCaption">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </section>
-					
-				  </article>
-
-				  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-				  <!-- these are the next/previous slide buttons -->
-				  
-				</section>
-
-					<br>
-
-					<section id="dotArea">
-					<!-- this section is for the picture select dots -->
-					  <span class="dot" onclick="currentSlide(1)"></span> 
-					  <span class="dot" onclick="currentSlide(2)"></span> 
-					  <span class="dot" onclick="currentSlide(3)"></span> 
-					  <!-- each function is associated to a picture -->
-				  
-					</section>		
-
-			</section>
-			
-			<!-- TWITTER -->
-				<section id="feed" class="flex-item">
-					<!-- this is the actual twitter feed -->
-					<a class="twitter-timeline" align="right" data-width="410px" data-height="450" href="https://twitter.com/JonLHerrera">Tweets by JonLHerrera</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-						<!-- Can't figure out how to make this script external -->
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>	
-							
-				</section>	
-			
 		</section>
-<!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE --><!-- ABOUT ME PAGE -->
-		<section id="aboutMePage" class="sitePage fadePage flex-containerAbout">
 		
-			<figure id="quickBio" class="flex-itemAbout">
+<!-- the following section is the about me page -->
+		
+		<article class="transition" id="transitionAbout">
 			
-				<img src="images/me.png" id="selfie">
-<!--				
-				<canvas id="myCanvas" width="250" height="250" style="background-color: transparent;">
-				<!-- I want the excess canvas to not be shown -->
-<!--					<img src="images/me.png" id="selfie">
-					<!-- this is my face on the about me page. the image must be contained in the canvas tags so it will only have a chance to appear in the canvas -->
-<!--				</canvas>
-				
-				<script src="js/canvas.js"></script>
-				<!-- script must come after canvas because thats the way HTML loads -->
-				<figcaption>
-					19 years old. <br>
+			<a href="#transitionAbout"> about me </a>
+			
+		</article>
+		
+	
+		<section class="page" id="pageAbout">
+		
+			<article id="contentAbout">
+			
+				<p> 19 years old. <br>
 					Young aspiring software developer. <br>
 					Loves learning, cooking, travelling, video-games, developing/designing. <br>
 					Though I may not be greatest at any of these things, I <em>am</em> the best at trying.
-				</figcaption>
+				</p>
 				
-			</figure>
-			
-			<section id="mtaStats" class="flex-itemAbout"> 
-			<!-- this section shows circular progress bars for the proficiencies tested for in the MTA -->
-			
-				<h4 style="margin:-20px;"> Microsoft Technology Associate: </h4> <br> <h5><i> HTML5 Application Development Fundamentals</i> </h5>
-			
-				<canvas class="chart" id="htmlSkill" width="150px" height="150px"
-				title="This is my proficiency in programming using HTML5 which is used for structuring websites.">
-				</canvas>
-					
-				<canvas id="cssSkill" width="150px" height="150px"
-				title="This is my proficiency in programming using Cascading Style Sheets which is used for styling webpages.">
-				</canvas>
-				
-				<canvas id="jsSkill" width="150px" height="150px"
-				title="This is my proficiency in programming using JavaScript which is used to create interactivity in websites.">
-				</canvas>
-				
-				<canvas id="lifeSkill" width="150px" height="150px"
-				title="This is my knowledge about the Application Life Cycle. This cycle explains the stages that an application must go through when being developed.">
-				</canvas>
-				
-				<p style="font-size: 10px;"><i> Hover for more information </i></p>
-				
-			
-			</section>
-			
-			<section class="experience flex-itemAbout">
-				<!-- TECHNICAL SKILLS -->
-				
-				<article class="skillList">
-				
-					<h2> Technical Skills - Learning in Progress </h2>
-					
-						<h3> Front-end Web Development:</h3>
-						<p> Proficient in constructing, designing, troubleshooting </p>
-						
-						<h3> Microsoft Office Suite: </h3> 
-						<p> Word, PowerPoint, Excel, Publisher </p>
-						
-						<h3> Developer Tools </h3> 
-						<p> Github, NetBeans, Notepad++ </p>
-						
-				</article>
-					
-				<article class="skillList">
-				
-					<h2> Awards and Certifications </h2>
-					
-						<h3> MTA: HTML5 Application Development Fundamentals </h3>
-						<p> Certified in using the fundamental applications for use in front-end web development </p>
-						
-						<h3> Skills Canada </h3>
-						<p> Participated in the national Skills Canada competition in the secondary school level for IT - Software Solutions for Businesses and achieved second place </p>
-						
-						<h3> Customer Service Excellence </h3>
-						<p> Have demonstrated the ability to communicate with customers and guests in a professional manner as well as the capacity to handle various situations that may arise </p>
-
-				</article>		
-						
-				<article class="skillList">
-				
-					<h2> Education and Training </h2>
-					
-						<h3> Technology Service Corps., NPower Canada </h3>
-						<p> Intensive fifteen week training in web and mobile applications development. <i> In progress </i></p>
-						
-						<h3> Assumption College School, Secondary School </h3>
-						<p>Graduated with OSSD, Honour Roll, and French Language Certificate</p>
-						
-				</article>
-				
-				<br>
-				
+				<section class="experience"> 
 					<a class="skillNext" onclick="plusSkills(1)">Next Page &#10095;</a>
 					<!-- these are the next/previous slide buttons -->
 				
-			</section>
+					<article class="skillList">
+					
+						<h2> Technical Skills </h2>
+						
+							<h3> Front-end Web Development:</h3>
+							<p> Proficient in constructing, designing, troubleshooting </p>
+							
+							<h3> Microsoft Office Suite: </h3> 
+							<p> Word, PowerPoint, Excel, Publisher </p>
+							
+							<h3> Developer Tools </h3> 
+							<p>  Notepad++, Github, NetBeans, Android Studio </p>
+							
+							<h3> Programming Languages </h3>
+							<p> HTML5, CSS3, JavaScript, Java, Java for Android </p>
+							
+								<h4> In Training </h4>
+								<p> SQL, XML, Python </p>
+							
+					</article>
+						
+					<article class="skillList">
+					
+						<h2> Awards and Certifications </h2>
+						
+							<h3> MTA: HTML5 Application Development Fundamentals </h3>
+							<p> Certified in using the fundamental applications for use in front-end web development </p>
+							
+							<h3> Skills Canada </h3>
+							<p> Participated in the national Skills Canada competition in the secondary school level for IT - Software Solutions for Businesses and achieved second place </p>
+							
+							<h3> Customer Service Excellence </h3>
+							<p> Have demonstrated the ability to communicate with customers and guests in a professional manner as well as the capacity to handle various situations that may arise </p>
+
+					</article>		
+							
+					<article class="skillList">
+					
+						<h2> Education and Training </h2>
+						
+							<h3> Technology Service Corps., NPower Canada </h3>
+							<p> Intensive fifteen week training in web and mobile applications development.</p>
+							
+								<h4> Extracurricular </h4>
+								<p> Review Committee - Organized activities to help teach peers new concepts </p>
+								<p> Graduation Video Committee - Directing a video used that will be used to promote the program </p>
+							
+							<h3> Assumption College School, Secondary School </h3>
+							<p> Graduated with OSSD, Honour Roll, and French Language Certificate</p>
+							
+								<h4> Extracurricular </h4>
+								<p> Curling Team - Played as a member of my school's curling team </p>
+								<p> Concert Band - Attended weekly rehearsals and performed for numerous events </p>
+							
+					</article>
+					
+					<br>
+				
+				</section>
+				
+				<p id="resume"> <a href="content/Jonathan_Herrera_Resume.pdf"> Click  here for printable resume</a> </p>
+				
+			</article>
 		
 		</section>
-
-<!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE --><!-- PORTFOLIO PAGE -->
-
-<!--		<section id="portfolioPage" class="sitePage fadePage">
 		
-	idea where links are on the top but and page would load underneath. On pause while a more visually appealing design is attempted		
-			<nav id="secondNav">
-			
-				<ul>
-					
-					<li><a onclick="load0()"> Snapshots </a><li>
-					<li><a onclick="load1()"> Project 1 </a></li>
-					<li><a onclick="load2()"> Project 2 </a></li>
-					<li><a onclick="load3()"> Project 3 </a></li>
-					
-				</ul>
-			
-			</nav>
-			
-			<article id="portfolioDisplay"> 
-			
-				<script>
-					
-					var portDisplay = document.getElementById("portfolioDisplay");
-					var snapshot = document.getElementById("snapshots");
-					
-					function load0(){
-						portDisplay.style.display = "none";
-						snapshot.style.display = "flex";	
-						<!-- this function will hide my projects and bring up its own section -->
-<!--					}				
-				
-					function load1(){
-						portDisplay.style.display = "initial";
-						portDisplay.innerHTML='<object type="text/html" data="minigames/brickbreaker.html"  text-align="center" width="70%" height="75%" class="fade"></object>';
-						snapshot.style.display = "none";
-						<!-- this function will display one of my projects in the portfolio section -->
-<!--					}
-					
-					function load2(){
-						portDisplay.style.display = "initial";
-						portDisplay.innerHTML='<object type="text/html" data="minigames/pong.html"  text-align="center" width="70%" height="100%" class="fade"></object>';
-						window.scrollTo(300, 500);
-						snapshot.style.display = "none";
-					}
-					//these functions are used to retrieve the portofolio objects
-					
-				</script>
-			
-			</article>
-			
-			<article id="snapshots">
-			
-				
-			
-			</article>
-	
-		</section>  -->
+<!-- the follwing section is the projects page -->
 		
-		<section id="portfolioPage" class="sitePage flex-containerPort fadePage">
+		<article class="transition" id="transitionProjects">
 		
-			<p class="flex-itemPort">
-				
-				This page contains small projects that I have worked on. Each project is a way of demonstrating the skills that I have learned at that point in time. As simple as they may appear, I have spent many hours working with each of them individually. They are not the most pollished pieces as more projects roll in but the experience gained from creating them will hopefully by noticeable in my upcoming pieces. <em> (Projects will open in new window) </em>
-				
-			</p>
-			
-			<section id="polaroids" class="flex-container2 flex-itemPort">
-			<!-- all images should be 300w by 200h in png format -->
-				<figure class="flex-item2">
-				
-					<img src="images/projects/svg.png" onclick="load0()">
-				
-					<figcaption>
-						
-						A masterpiece by Jonathan Herrera <br>
-						05.29.16
-						
-					</figcaption>
-				
-				</figure>
-				
-				<figure class="flex-item2" onclick="load1()">
-				
-					<img src="images/projects/guess.png">
-					
-					<figcaption>
-					
-						A simple guessing game <br>
-						06.09.16
-						
-					</figcaption>
-					
-				</figure>
-				
-				<figure class="flex-item2" onclick="load2()">
-				
-					<img src="images/projects/breakout.png">
-					
-					<figcaption>
-					
-						A recreation of the game Breakout <br>
-						06.13.16
-						
-					</figcaption>
-					
-				</figure>
-				
-				<figure class="flex-item2" onclick="load3()">
-				
-					<img src="images/projects/pong.png">
-					
-					<figcaption>
-					
-						A two player Pong <br>
-						06.15.16
-						
-					</figcaption>
-					
-				</figure>
-				
-			</section>
-
-		</section>
-		
-<!-- INTERESTS PAGE --><!-- INTERESTS PAGE --><!-- INTERESTS PAGE --><!-- INTERESTS PAGE --><!-- INTERESTS PAGE -->
-
-		<article id="interestsPage" class="sitePage">
-		<!-- i use article because it can stand alone w/o content -->
-		<!-- a lot of in-line CSS is going to be used due to the layout I am aiming for -->
-			<!-- Main Section -->
-			<article class="interest">
-		
-				<p> I have many interests which include listening to music and playing it (on the trumpet, though its been a while), tasting new foods and attempting creative recipes, and solving puzzles (I enjoy sudoku). Though there are many more, my top interests are listed here. </p>
-				
-				<p><i>(scroll right)</i></p>
-		
-			</article>	
-			
-
-		
-		
-			<!-- Video Games -->
-<article class="spacing"><h2> Video Games </h2></article>
-<article class="spacing"></article>
-	
-				<img src="images/interests/uncharted.png">
-				
-				
-				
-				<article class="interest" style="margin: 0 100px 0 -50px">
-				
-					<p>	My interest in video games has spawned when I was a very young child beginning with a certain Italian plumber character on a journey to save a princess.</p> 
-		
-					<p>In more recent years gaming has become a large industry in which I have become more interested in actually entering. I am inspired by the craftsmanship and talent put into one game and I wish to develop something that others may see.<p>
-		
-					<p>My favourite video game series are "UNCHARTED", by Naughty Dog, for its beautiful graphics and enthralling narratives, and "The Legend of Zelda" series from Nintendo, for its fluid gameplay and immersive world.</p>
-					
-				</article>	
-				
-				<img src="images/interests/zelda.jpg">
-			
-<article class="spacing"><h2> Travelling </h2></article>
-<article class="spacing"></article>
-
-				<img src="images/interests/travel.png">
-				
-				<article class="interest" style="margin-left: -500px">
-				
-					<p> A big dream of mine, as it probably is with many others, is to travel the world. I wish to experience the culture of people from around the world.</p>
-					
-					<p style="margin: 30px 0 0 -50px">I want to make the best of life and see everything the world has to offer.</p>
-				
-				</article>	
-
-<article class="spacing"><h2> Technology </h2></article>
-<article class="spacing"></article>
-				
+			<a href="#transitionProjects"> my projects </a>
 		
 		</article>
 		
-		<section id="contactPage" class="sitePage">
+		<section class="page" id="pageProjects">
 		
-			<p> Email: Jon.Herrera@outlook.com <br>
-				GitHub: https://github.com/JonHerrera/ <br>
-				Twitter: @JonLHerrera </p>
+			<article id="contentProjects">
+			
+					<a href="http://github.com/jonherrera"><img src="images/icons/github.png"></a>
+					
+					<dl id="projectList">
+					
+						<dt> Aliens! | HTML5/CSS3 | 05.29.16 </dt>
+						<dd> An SVG drawing made by coding for every shape and color. </dd>
+						
+						<dt> Number Guess | JavaScript | 06.09.16 </dt>
+						<dd> A game where the user must guess a randomly generated number in 7 tries. </dt>
+						
+						<dt> Breakout Clone | JavaScript | 06.13.16 </dt>
+						<dd> A clone of the Breakout game. Unpolished as I pivoted ideas. </dd>
+						
+						<dt> 2-Player Pong | JavaScript | 06.15.16 </dt>
+						<dd> Pivoted to Pong to be creative because all my peers made Breakout. </dd>
+						
+						<dt> Fifteen Squares | Java | 07.17|16 </dt>
+						<dd> A command line game of <a href="https://en.wikipedia.org/wiki/15_puzzle"> 15 puzzle. </a> Created all the logic with a 2D array.
+					
+						<dt> nChat | Java/SQL | 08.20.16 </dt>
+						<dd> A messaging system comprised of a GUI and a virtual server. </dd>
+						
+						<dt> Hey Listen! | Android/Java | 08.28.16 </dt>
+						<dd> An attempt at an Android game. A challenge to see what could be done in a week. </dd>
+						
+					</dl>
+				
+			
+			</article>
 		
 		</section>
+		
+<!-- the following is the interests page -->
 
-    </body>
+		<article class="transition" id="transitionInterests">
+		
+			<a href="#transitionInterests"> my interests </a>
+		
+		</article>
+		
+		<section class="page" id="pageInterests">
+		
+			<article id="contentInterests">
+			
+			
+			</article>
+		
+		</section>
+		
+<!-- the following is the contact page -->
 
-</html>
+		<article class="transition" id="transitionContact">
+			
+			<a href="#transitionContact"> connect </a>
+		
+		</article>
+		
+		<section class="page" id="pageContact">
+		
+			<form>
+		
+				<table id="formContact">
+					
+					<tr>
+						<td> <input type="text" name="firstName" value="" placeholder="Name" required></td>
+					</tr>
+					
+					<tr>
+						<td> <textarea rows="5" cols="30" value="" placeholder="Write message here" required></textarea></td>
+					</tr>
+					
+				</table>
+			
+			</form>
+			
+		</section>
+		
+	</body>
+	
+<html>

@@ -1,0 +1,89 @@
+#interestsPage {
+	margin-top: -50px;
+	/* so content is right against the nav bar */
+	height: 92vh;
+	/* so the content doesnt scroll down */
+	width: auto;
+	overflow-x: auto;
+	overflow-y: hidden;
+	/* the content will only go left to right */
+/*	border: 1px solid red; */
+	
+}
+
+	.interest {
+/*		border: 1px solid green; */
+		padding-top: 30px;
+		/* so the words arent right at the top */
+		max-height: 30%;
+		/* for some reason setting a min height or just height will make it go 100% */
+		min-width: 450px;
+		/* I want my things to appear in small boxes of roughly equal sizes */
+/*		background-color: purple; */
+		text-align: center;
+	}
+	
+		.spacing > h2 {
+			
+			/* so my rotated words will be shown on screen */
+			text-transform: uppercase;
+			/* headings will all be uppercase */
+			transform: rotate(-90deg);
+			transform-origin: left bottom -500;
+			/* make vertical text facing the right */
+			background-color: rgba(255,255,255,.8);
+			box-shadow: .5px .5px 2px black;
+			text-align: left;
+			padding-left: 10px;
+			/* spacign the bottom or left of text */
+			width: 100vh;
+		}
+	
+		.interest:first-child {
+			margin: 20% 10% 20% 20%;
+		}
+		
+		.interest p {
+		/* I must style the <p> because the content spills outside the <article> */
+			margin: 10px;
+			font-size: 18px;
+			/* easier to read as everything is spread out */
+			background-color: rgba(255,255,255,.8);
+			box-shadow: .5px .5px 2px black;
+		}
+		
+	.spacing {
+/*		background-color: green; */
+		min-width: 250px;
+		/* creating minimum space between each section */
+		
+	}
+		
+@media screen and (max-width: 600px) {
+	
+	#interestsPage {
+		margin-top: 12px;
+		height: 95vh;
+	}
+	
+		.interest:first-child {
+				margin: 20% 10% 20% 10px;
+			}
+			
+			.interest > p:first-child {
+				max-width: 90vw;
+			}
+			
+			.interest {
+				margin: 0 0 0 0;
+				background-color: black;
+			}
+			
+				.interest > p {
+					max-width: 95vw;
+					/* so that on mobile you can read my interests without scrolling */
+					background-color: blue;
+					margin: 0;
+				}
+		
+}

@@ -1,0 +1,81 @@
+#transitionAbout {
+	background-color: rgb(25, 181, 254); 
+		/* blue color */
+}
+
+#pageAbout {
+	background-image: url("../images/backgrounds/me3.jpg");
+	background-size: 50vw 100vh;
+	background-repeat: no-repeat;
+	background-position: right;
+	background-attachment: fixed;
+	overflow-y: hidden;
+}
+
+	#contentAbout {
+		background-color: white;
+			/* to cover up the background image a bit */
+		height: 93vh;
+			/* so its the same size as the image and fits the screen height */
+		width: 50vw;
+		overflow-y: hidden;
+			/* for when the experience gets too long */
+	}
+	
+		#contentAbout > p {
+			text-align: center;
+			margin-top: 2%;
+			border-bottom: .5px solid black;
+			width: 50vw;
+		}
+
+.experience {
+/* this sectoin is for my MTA stats */
+	margin: 3% 3%;
+	width: 45vw;
+	/*so the experience allows the other two to stay on the one page
+	Will change  in the media query for better viewing*/
+	height: auto;
+	/* for responsiveness */
+	color: black;
+}	
+	
+	.experience h2 {
+	/* my section headings */
+		margin: 5px 0 5px 0;
+	}
+	
+	.experience h3 {	
+		margin-top: 5px;
+	}
+	
+			/* follows the same idea as the slideshow on the homepage stylesheet */
+			.skillNext {
+				margin-top: 1.5%;
+				cursor: pointer;
+				color: grey;
+				font-weight: bold;
+				font-size: 12px;				
+				transition: 0.6s ease;
+				/* transition speed for the hover */
+				float: right;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.skillNext:hover {
+				color: black;
+			}
+
+#resume > a {
+	text-decoration: none;
+	color: black;
+}
+
+	
+
+	
+	
+	
+	
+	
+	
